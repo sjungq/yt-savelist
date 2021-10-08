@@ -1,0 +1,16 @@
+<% layout('layouts/boilerplate') %>
+<body>
+  <h2>Total videos: <%= playlistData.data.pageInfo.totalResults %></h2>
+  <div class="container">
+    <ul>
+      <% for (let item of playlistData.playlistItems) { %>
+      <li>
+        <a
+          href="https://www.youtube.com/watch?v=<%= item.snippet.resourceId.videoId %>"
+          ><%= item.snippet.title %></a
+        >
+      </li>
+      <% } %>
+    </ul>
+  </div>
+</body>

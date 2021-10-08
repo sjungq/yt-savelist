@@ -1,0 +1,26 @@
+{
+  "name": "yt-savelist",
+  "version": "0.0.1",
+  "description": "Backup all video info from YT playlists",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sjungq/yt-savelist.git"
+  },
+  "author": "Stacy Jung",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sjungq/yt-savelist/issues"
+  },
+  "homepage": "https://github.com/sjungq/yt-savelist#readme",
+  "dependencies": {
+    "axios": "^0.22.0",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "ejs-mate": "^3.0.0",
+    "express": "^4.17.1"
+  }
+}

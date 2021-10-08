@@ -1,0 +1,35 @@
+$primaryColor: #2b2b4b;
+$primaryText: #8d91a0;
+$primaryHighlight: #00c6c7;
+$secondaryHighlight: #5e5ce6;
+
+.container {
+  background: $primaryColor;
+  display: flex;
+  color: $primaryText;
+}
+
+.navbar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #12121f;
+  color: $primaryText;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a:hover {
+  color: $primaryHighlight;
+}

@@ -1,0 +1,36 @@
+.container {
+  background: #2b2b4b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #8d91a0;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #12121f;
+  color: #8d91a0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a:hover {
+  color: #00c6c7;
+}
+/*# sourceMappingURL=style.css.map */
