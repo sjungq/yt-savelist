@@ -1,0 +1,17 @@
+<%- layout("layouts/boilerplate") %>
+
+<div class="backup-search">
+  <%- include("../partials/backup_header") %>
+
+  <div class="search-form-container">
+    <form action="/backup" method="POST" novalidate class="search-form">
+      <div class="form-set">
+        <label for="playlistUrl"> Playlist URL / ID </label>
+        <input type="text" id="playlistUrl" name="playlistUrl" />
+      </div>
+      <div class="form-set">
+        <button class="btn-dark">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

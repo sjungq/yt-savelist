@@ -1,21 +1,53 @@
-.container {
-  background: #2b2b4b;
+.main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.container {
+  background: #2b2b4b;
   color: #8d91a0;
+  width: 100%;
+}
+
+.view {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.btn-dark {
+  background: #12121f;
+  border-radius: 5%;
+  border-style: none;
+  color: #00c6c7;
+  padding: 2%;
 }
 
 .navbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  width: 100%;
+  width: 150px;
   background: #12121f;
   color: #8d91a0;
+  height: 100vh;
+}
+
+.nav-item {
+  padding: 5%;
 }
 
 a {
@@ -32,5 +64,80 @@ a:visited {
 
 a:hover {
   color: #00c6c7;
+}
+
+.search-form-container {
+  width: 100%;
+}
+
+.backup-search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.backup-search h1 {
+  font-size: 36px;
+  margin: 2%;
+}
+
+.form-set {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-set > * {
+  margin: 1%;
+}
+
+#playlistUrl {
+  width: 90%;
+}
+
+.playlist-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #5e5ce6;
+}
+
+.playlist-info-container {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.25rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.backup-controls-container {
+  margin: 3% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.backup-controls-container > button {
+  margin: 0 2%;
 }
 /*# sourceMappingURL=style.css.map */

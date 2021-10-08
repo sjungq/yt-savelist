@@ -59,6 +59,45 @@ class YTApi {
       //console.log(e);
     }
   }
+
+  async returnPlaylistId(link) {
+    //will check and return playlist ID from URL string, or just return if valid playlist ID
+    //probably a bad idea to do multiple things but figure that out later
+    const path = "/playlists";
+    const urlSearchParams = new URLSearchParams(link);
+    const params = urlSearchParams.get("https://www.youtube.com/playlist?list");
+    let testLink = link;
+    if (params) {
+      testLink = params;
+    }
+
+    try {
+      const config = {
+        ...this.base_config,
+        params: {
+          ...this.base_config.params,
+          part: "snippet",
+          id: testLink,
+          maxResults: 1,
+        },
+      };
+      const response = await this.makeApiRequest(path, config);
+
+      if (response.items.length != 0) {
+        return {
+          playlistId: testLink,
+          playlistName: response.items[0].snippet.title,
+        };
+      } else {
+        throw "Invalid Youtube Link";
+      }
+    } catch (e) {
+      console.log(testLink);
+      throw "Invalid Youtube Link";
+      //handle this in express
+      //console.log(e);
+    }
+  }
 }
 
 module.exports = YTApi;

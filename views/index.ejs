@@ -1,7 +1,7 @@
 <% layout('layouts/boilerplate') %>
-<body>
+<div class="view">
   <h2>Total videos: <%= playlistData.data.pageInfo.totalResults %></h2>
-  <div class="container">
+  <div>
     <ul>
       <% for (let item of playlistData.playlistItems) { %>
       <li>
@@ -13,4 +13,4 @@
       <% } %>
     </ul>
   </div>
-</body>
+</div>

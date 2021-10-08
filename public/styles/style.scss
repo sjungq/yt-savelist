@@ -2,20 +2,48 @@ $primaryColor: #2b2b4b;
 $primaryText: #8d91a0;
 $primaryHighlight: #00c6c7;
 $secondaryHighlight: #5e5ce6;
+$dark: #12121f;
+
+.main {
+  display: flex;
+  font-family: "Noto Sans", sans-serif;
+}
 
 .container {
   background: $primaryColor;
-  display: flex;
   color: $primaryText;
+  width: 100%;
 }
+
+.view {
+  display: flex;
+  flex-direction: column;
+}
+
+//Generic
+.btn-dark {
+  background: $dark;
+  border-radius: 5%;
+  border-style: none;
+  color: $primaryHighlight;
+  padding: 2%;
+}
+
+//Navbar
 
 .navbar {
   display: flex;
+  flex-direction: column;
   position: sticky;
   top: 0;
-  width: 100%;
+  width: 150px;
   background: #12121f;
   color: $primaryText;
+  height: 100vh;
+}
+
+.nav-item {
+  padding: 5%;
 }
 
 a {
@@ -32,4 +60,63 @@ a:visited {
 
 a:hover {
   color: $primaryHighlight;
+}
+
+//Backup submit form page
+.search-form-container {
+  width: 100%;
+}
+
+.backup-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.backup-search h1 {
+  font-size: 36px;
+  margin: 2%;
+}
+
+.form-set {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-set > label {
+}
+
+.form-set > * {
+  margin: 1%;
+}
+
+#playlistUrl {
+  width: 90%;
+}
+
+//Playlist display
+.playlist-item {
+  display: flex;
+  border: 1px solid $secondaryHighlight;
+}
+
+.playlist-info-container {
+  width: 90%;
+  display: flex;
+  font-size: 1.25rem;
+  justify-content: space-between;
+}
+
+.playlist-info-item {
+}
+
+.backup-controls-container {
+  margin: 3% 0;
+  display: flex;
+}
+
+.backup-controls-container > button {
+  margin: 0 2%;
 }
