@@ -1,7 +1,19 @@
-$primaryColor: #2b2b4b;
-$primaryText: #8d91a0;
-$primaryHighlight: #00c6c7;
-$secondaryHighlight: #5e5ce6;
+// $primaryColor: #2b2b4b;
+// $primaryTextLight: #8d91a0;
+// $secondaryColor: #00c6c7;
+// $primaryLight: #5e5ce6;
+// $dark: #12121f;
+
+$primaryColor: #0277bd;
+$primaryTextLight: #fff;
+$primaryTextDark: #333;
+$primaryBlank: #fff;
+$secondaryBlank: #ccc;
+$tertiaryBlank: #808080;
+$secondaryColor: #3f50b5;
+$secondaryLight: #757ce8;
+$secondaryDark: #002884;
+$primaryLight: #58a5f0;
 $dark: #12121f;
 
 .main {
@@ -10,9 +22,10 @@ $dark: #12121f;
 }
 
 .container {
-  background: $primaryColor;
-  color: $primaryText;
+  //background: $primaryColor;
+  color: $primaryTextDark;
   width: 100%;
+  height: 100vh;
 }
 
 .view {
@@ -21,12 +34,15 @@ $dark: #12121f;
 }
 
 //Generic
-.btn-dark {
-  background: $dark;
+.btn {
   border-radius: 5%;
   border-style: none;
-  color: $primaryHighlight;
   padding: 2%;
+}
+
+.dark {
+  background: $dark;
+  color: $secondaryColor;
 }
 
 //Navbar
@@ -38,7 +54,7 @@ $dark: #12121f;
   top: 0;
   width: 150px;
   background: #12121f;
-  color: $primaryText;
+  color: $primaryTextLight;
   height: 100vh;
 }
 
@@ -59,7 +75,16 @@ a:visited {
 }
 
 a:hover {
-  color: $primaryHighlight;
+  color: $secondaryColor;
+}
+
+.page-header {
+  background-color: $primaryColor;
+  color: $primaryTextLight;
+  //width: 100%;
+  font-size: 36px;
+  padding: 1%;
+  align-self: stretch;
 }
 
 //Backup submit form page
@@ -70,13 +95,10 @@ a:hover {
 .backup-search {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  //justify-content: space-evenly;
   align-items: center;
-}
-
-.backup-search h1 {
-  font-size: 36px;
-  margin: 2%;
+  height: 100vh;
+  background-color: $primaryBlank;
 }
 
 .form-set {
@@ -96,27 +118,82 @@ a:hover {
   width: 90%;
 }
 
-//Playlist display
-.playlist-item {
-  display: flex;
-  border: 1px solid $secondaryHighlight;
-}
-
 .playlist-info-container {
-  width: 90%;
   display: flex;
-  font-size: 1.25rem;
+  flex-direction: column;
+  margin: 1% auto 1% 1%;
   justify-content: space-between;
+  font-size: 0.9rem;
+  white-space: nowrap;
+
+  * {
+    padding: 1%;
+  }
+  .playlist-info-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
 }
 
-.playlist-info-item {
-}
-
+//Download buttons on playlist display
 .backup-controls-container {
-  margin: 3% 0;
+  margin: 1% auto 1% 1%;
   display: flex;
+  .btn-download {
+    margin: 1% 3% 1% 1%;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    padding: 5%;
+    background-color: $secondaryColor;
+    color: $primaryTextLight;
+    box-shadow: 0px 2px 0px rgba($secondaryDark, 0.2);
+    transition: all 0.05s ease-out 0s;
+  }
+
+  .btn-download:active {
+    transform: translateY(2px);
+    box-shadow: none;
+  }
 }
 
-.backup-controls-container > button {
-  margin: 0 2%;
+//Playlist display
+
+.playlist-container {
+  overflow: auto;
+  height: 90vh;
+  width: 100%;
+  .playlist-item {
+    display: flex;
+    //border: 1px solid $primaryLight;
+    border-bottom: 1px solid $secondaryBlank;
+    align-items: flex-start;
+    padding: 1%;
+
+    .playlist-item-desc {
+      display: flex;
+      flex-direction: column;
+      margin: 1%;
+      flex-grow: 4;
+
+      .yt-title {
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+
+      .yt-uploader {
+        font-size: 1rem;
+        color: $tertiaryBlank;
+        margin-top: 1%;
+      }
+    }
+  }
+
+  // .playlist-item:nth-child(even) {
+  //   background-color: $secondaryBlank;
+  // }
+
+  //don't really need this? Not really going to make them selectable
+  // .playlist-item:hover {
+  //   background-color: $primaryTextDark;
+  // }
 }
