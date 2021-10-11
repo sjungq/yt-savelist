@@ -1,5 +1,5 @@
 # yt-savelist
 
-It would be awesome if I knew which videos on my Youtube playlists were deleted...
+Small web application to take text/json backups of Youtube playlists.
 
-Simple web-hosted tool to take backups of Youtube playlists in text format
+Supply a full Youtube playlist URL or Youtube playlist ID to create a text/json list of playlist videos.
