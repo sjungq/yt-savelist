@@ -144,8 +144,15 @@ a:hover {
   font-weight: bold;
 }
 
+.backup-form {
+  margin-left: auto;
+}
+
 .backup-controls-container {
   margin: 1% auto 1% 1%;
+}
+
+.backup-controls-container .backup-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

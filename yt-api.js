@@ -24,7 +24,7 @@ class YTApi {
       ...this.base_config,
       params: {
         ...this.base_config.params,
-        part: "id,snippet",
+        part: "id,snippet,contentDetails",
         playlistId: playlistId,
         maxResults: maxResults,
       },

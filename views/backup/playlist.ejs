@@ -16,13 +16,33 @@
       >
     </div>
   </div>
+
   <div class="backup-controls-container">
-    <button id="txtSaveBtn" class="btn btn-download">
-      <p>Save as .txt</p>
-      <!-- <a href="">Save as .txt</a> -->
-    </button>
-    <button class="btn btn-download"><p>Save as .json</p></button>
+    <form
+      class="backup-form"
+      action="/playlist/<%= playlistData.playlistItems[0].snippet.playlistId %>"
+      method="POST"
+    >
+      <button
+        id="txtSaveBtn"
+        class="btn btn-download"
+        name="fileType"
+        value="TXT"
+      >
+        <p>Save as .txt</p>
+        <!-- <a href="">Save as .txt</a> -->
+      </button>
+      <button
+        id="jsonSaveBtn"
+        class="btn btn-download"
+        name="fileType"
+        value="JSON"
+      >
+        <p>Save as .json</p>
+      </button>
+    </form>
   </div>
+
   <div class="playlist-container">
     <% for( let item of playlistData.playlistItems) { %>
     <div class="playlist-item">

@@ -7,6 +7,7 @@ require("dotenv").config();
 
 //INTERNAL IMPORTS
 const YTApi = require("./yt-api");
+const { returnBackupFile } = require("./public/scripts/backup");
 
 const api = new YTApi();
 const app = express();
@@ -60,6 +61,23 @@ app.get("/playlist/:playlistId", async (req, res) => {
     res.render("backup/playlist", { playlistData, playlistName });
   } catch (e) {
     console.log(e);
+  }
+});
+
+app.post("/playlist/:playlistId", async (req, res) => {
+  try {
+    const playlistData = await api.getPlaylistItems(req.params.playlistId);
+    let responseFile;
+    let cleanedData = returnBackupFile(playlistData, req.body.fileType);
+    if (req.body.fileType === "TXT") {
+      res.setHeader("Content-Type", "text/plain");
+    } else if (req.body.fileType === "JSON") {
+      res.setHeader("Content-Type", "application/json");
+    }
+    res.send(cleanedData);
+  } catch (e) {
+    console.log(e);
+    res.send("Error");
   }
 });
 

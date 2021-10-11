@@ -136,9 +136,17 @@ a:hover {
 }
 
 //Download buttons on playlist display
+.backup-form {
+  margin-left: auto;
+}
+
 .backup-controls-container {
   margin: 1% auto 1% 1%;
-  display: flex;
+
+  .backup-form {
+    display: flex;
+  }
+
   .btn-download {
     margin: 1% 3% 1% 1%;
     font-size: 1.1rem;
