@@ -18,18 +18,12 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
-const playlistId = "PLYY39e2HWVnNHb58Z8zE8oSZsHC1uH5fI";
-
 //ROUTES
 app.get("/backup", (req, res) => {
   res.render("backup/search");
 });
 
 app.post("/backup", async (req, res) => {
-  //req.body.playlistUrl
-  //parse this out - recognize if it is a full Youtube link or just the ID
-  //for now, always submit full YT link
-
   try {
     const { playlistId, playlistName } = await api.returnPlaylistId(
       req.body.playlistUrl
@@ -39,15 +33,6 @@ app.post("/backup", async (req, res) => {
     //Display error -- shouldn't redirect
     console.log(e);
     res.redirect("backup");
-  }
-});
-
-app.get("/playlist", async (req, res) => {
-  try {
-    const playlistData = await api.getPlaylistItems(playlistId);
-    res.render("playlist", { playlistData });
-  } catch (e) {
-    console.log(e);
   }
 });
 
