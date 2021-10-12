@@ -1,6 +1,6 @@
 # yt-savelist
 
-Hosted on [sjungq.com/backup](sjungq.com/backup).
+Hosted on [sjungq.com/backup](http://sjungq.com/backup).
 
 Small web application to take text/json backups of Youtube playlists.
 
