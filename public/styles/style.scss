@@ -46,20 +46,43 @@ $dark: #12121f;
 }
 
 //Navbar
+//general nav styles regardless of screen size
 
 .navbar {
   display: flex;
-  flex-direction: column;
-  position: sticky;
-  top: 0;
-  width: 150px;
-  background: #12121f;
   color: $primaryTextLight;
-  height: 100vh;
+  background: #12121f;
 }
 
-.nav-item {
-  padding: 5%;
+//screen size specific
+@media only screen and (max-width: 600px) {
+  .navbar {
+    position: sticky;
+    top: 0;
+    justify-content: flex-end;
+  }
+
+  .nav-item {
+    padding: 2%;
+  }
+
+  .main {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .navbar {
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    width: 150px;
+    height: 100vh;
+  }
+
+  .nav-item {
+    padding: 5%;
+  }
 }
 
 a {
