@@ -19,9 +19,6 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
 //ROUTES
-app.get("/", (req, res) => {
-  res.redirect("backup");
-});
 
 app.get("/backup", (req, res) => {
   res.render("backup/search");
